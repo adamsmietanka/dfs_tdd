@@ -18,7 +18,7 @@ class Map:
                 not visited[y][x] and self.graph[y][x])
 
     def dfs(self, x, y, visited):
-        # Neighbouring cell coords
+        # Neighbouring cells relative coords
         rows = [-1, -1, -1,  0, 0,  1, 1, 1]
         cols = [-1,  0,  1, -1, 1, -1, 0, 1]
 
@@ -26,7 +26,7 @@ class Map:
         visited[y][x] = 1
 
         # Recur for all neighbouring cells
-        for i in range(8):
+        for i in range(len(rows)):
             if self.is_valid(x + cols[i], y + rows[i], visited):
                 self.dfs(x + cols[i], y + rows[i], visited)
 
