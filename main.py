@@ -50,5 +50,5 @@ if __name__ == '__main__':
         m = Map(g=None, path=sys.argv[1])
         print(m.count_islands())
     else:
-        print(f"The file '{sys.argv[1]}' doesn't exist")
+        print(f"The file '{sys.argv[1]}' doesn't exist", file=sys.stderr)
 
