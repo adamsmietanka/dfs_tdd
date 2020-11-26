@@ -5,7 +5,7 @@ class Map:
         self.Y = len(g)
         self.graph = g
 
-    def is_valid(self):
+    def is_valid(self, x, y, visited):
         pass
 
     def dfs(self):
