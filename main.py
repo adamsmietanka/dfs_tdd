@@ -24,7 +24,18 @@ class Map:
                 self.dfs(x + cols[i], y + rows[i], visited)
 
     def count_islands(self):
-        pass
+        # All cells are unvisited at the start
+        visited = [[0 for x in range(self.X)]for y in range(self.Y)]
+
+        # Go through all the cells in the map
+        count = 0
+        for y in range(self.Y):
+            for x in range(self.X):
+                if visited[y][x] == 0 and self.graph[y][x] == 1:
+                    # New island found
+                    self.dfs(x, y, visited)
+                    count += 1
+        return count
 
 
 if __name__ == '__main__':

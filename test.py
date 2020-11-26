@@ -65,6 +65,11 @@ class DFSTest(unittest.TestCase):
                                     [0, 0, 0, 1],
                                     [0, 0, 1, 0]])
 
+    def test_island_count(self):
+        self.assertEqual(self.map_1.count_islands(), 1)
+        self.assertEqual(self.map_2.count_islands(), 2)
+        self.assertEqual(self.map_3.count_islands(), 2)
+
 
 if __name__ == '__main__':
     unittest.main()
