@@ -1,9 +1,9 @@
 class Map:
 
-    def __init__(self, x, y, g):
-        self.X = x
-        self.Y = y
-        self.graph = graph
+    def __init__(self, g):
+        self.X = len(g[0])
+        self.Y = len(g)
+        self.graph = g
 
     def is_valid(self):
         pass
@@ -18,8 +18,6 @@ class Map:
 if __name__ == '__main__':
     graph = [[]]
 
-    x = len(graph)
-    y = len(graph[0])
-    m = Map(x, y, graph)
+    m = Map(graph)
     print(m.count_islands())
 
