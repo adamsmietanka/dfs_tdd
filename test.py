@@ -18,7 +18,7 @@ class DFSTest(unittest.TestCase):
         self.map_3 = Map([[1, 0, 1, 1],
                           [1, 0, 1, 1],
                           [0, 0, 0, 1],
-                          [0, 0, 1, 0]])
+                          [1, 0, 1, 0]])
         self.v_3 = [[0, 0, 0, 0],
                     [0, 0, 0, 0],
                     [0, 0, 0, 0],
@@ -68,7 +68,7 @@ class DFSTest(unittest.TestCase):
     def test_island_count(self):
         self.assertEqual(self.map_1.count_islands(), 1)
         self.assertEqual(self.map_2.count_islands(), 2)
-        self.assertEqual(self.map_3.count_islands(), 2)
+        self.assertEqual(self.map_3.count_islands(), 3)
 
 
 if __name__ == '__main__':

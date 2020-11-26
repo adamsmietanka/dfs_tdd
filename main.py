@@ -1,3 +1,6 @@
+import sys
+import os
+
 class Map:
 
     def __init__(self, g, path=None):
@@ -7,7 +10,7 @@ class Map:
 
     def load_graph(self, path):
         with open(path) as txt:
-            return [[int(x) for x in line.split()] for line in txt]
+            return [[int(x) for x in line if x != '\n'] for line in txt]
 
     def is_valid(self, x, y, visited):
         return (0 <= x < self.X and
@@ -43,6 +46,9 @@ class Map:
 
 
 if __name__ == '__main__':
-    m = Map(g=None, path='map.txt')
-    print(m.count_islands())
+    if os.path.exists(sys.argv[1]):
+        m = Map(g=None, path=sys.argv[1])
+        print(m.count_islands())
+    else:
+        print(f"The file '{sys.argv[1]}' doesn't exist")
 
