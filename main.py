@@ -1,9 +1,13 @@
 class Map:
 
-    def __init__(self, g):
-        self.X = len(g[0])
-        self.Y = len(g)
-        self.graph = g
+    def __init__(self, g, path=None):
+        self.graph = g if path is None else self.load_graph(path)
+        self.X = len(self.graph[0])
+        self.Y = len(self.graph)
+
+    def load_graph(self, path):
+        with open(path) as txt:
+            return [[int(x) for x in line.split()] for line in txt]
 
     def is_valid(self, x, y, visited):
         return (0 <= x < self.X and
@@ -39,8 +43,6 @@ class Map:
 
 
 if __name__ == '__main__':
-    graph = [[]]
-
-    m = Map(graph)
+    m = Map(g=None, path='map.txt')
     print(m.count_islands())
 
