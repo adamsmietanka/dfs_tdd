@@ -6,7 +6,9 @@ class Map:
         self.graph = g
 
     def is_valid(self, x, y, visited):
-        pass
+        return (0 <= x < self.X and
+                0 <= y < self.Y and
+                not visited[y][x] and self.graph[y][x])
 
     def dfs(self):
         pass

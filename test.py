@@ -23,7 +23,7 @@ class DFSTest(unittest.TestCase):
         # Check if the point lies on the map
         self.assertTrue(self.map_1.is_valid(x=1, y=0, visited=self.visited_1))
         self.assertFalse(self.map_1.is_valid(2, 0, self.visited_1))
-        self.assertTrue(self.map_2.is_valid(1, 1, self.visited_2))
+        self.assertTrue(self.map_2.is_valid(2, 1, self.visited_2))
         self.assertFalse(self.map_2.is_valid(1, 2, self.visited_2))
 
         # Check if the point has been visited
