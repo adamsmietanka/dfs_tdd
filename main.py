@@ -10,8 +10,18 @@ class Map:
                 0 <= y < self.Y and
                 not visited[y][x] and self.graph[y][x])
 
-    def dfs(self):
-        pass
+    def dfs(self, x, y, visited):
+        # Neighbouring cell coords
+        rows = [-1, -1, -1,  0, 0,  1, 1, 1]
+        cols = [-1,  0,  1, -1, 1, -1, 0, 1]
+
+        # Mark the cell as visited
+        visited[y][x] = 1
+
+        # Recur for all neighbouring cells
+        for i in range(8):
+            if self.is_valid(x + cols[i], y + rows[i], visited):
+                self.dfs(x + cols[i], y + rows[i], visited)
 
     def count_islands(self):
         pass
